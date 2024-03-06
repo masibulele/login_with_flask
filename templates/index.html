@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <h1>Login</h1>
+            </div>  
+            <div class="links-container">
+                <a href="{{url_for('log_on')}}" class="link active">Login</a>
+                <a href="{{ url_for('register') }}" class="link">Register</a>
+            </div>
+            <form action="{{url_for('log_on')}}" method="post">
+                <div class="form-item">
+                    <label for="username">
+                    <i class="fa fa-user"></i>
+                    </label>
+                    <input type="text" name="username" placeholder="username" class="login-info">
+                </div>
+                <div class="form-item">
+                    <label for="username">
+                        <i class="fa fa-lock"></i>
+                    </label>
+                    <input type="text" name="password" placeholder="Password" class="login-info">
+                </div>
+                <div class="msg">{{msg}}</div>
+                <input type="submit" value="Login" class="login-btn">
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

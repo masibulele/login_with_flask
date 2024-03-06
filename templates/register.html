@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+        <div class="container">
+            <div class="form-container register">
+                <div class="header">
+                    <h1>Register</h1>
+                </div>
+                <div class="links-container">
+                    <a href="{{ url_for('log_on') }}" class="link">Login</a>
+                    <a href="{{ url_for('register') }}" class=" link active">Register</a>
+                </div>
+                <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+                    <div class="form-item">
+                        <label for="username">
+                            <i class="fas fa-user"></i>
+                        </label>
+                        <input type="text" name="username" placeholder="Username" id="username" required class="login-info">
+                    </div>
+                    <div class="form-item">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="password" name="password" placeholder="Password" id="password" required class="login-info">
+                    </div>
+                    <div class="form-item">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                        </label>
+                        <input type="email" name="email" placeholder="Email" id="email" required class="login-info">
+                    </div>
+                    <div class="msg">{{ msg }}</div>
+                    <input type="submit" value="Register" class="login-btn">
+                </form>
+            </div>
+        </div>
+	</body>
+</html>
